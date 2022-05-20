@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class OrderViewController: UIViewController {
+class AddOrderViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -59,9 +59,9 @@ class OrderViewController: UIViewController {
     private func setupUI() {
         title = "Add New Order"
         
-        tableView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.height.equalTo(UIScreen.main.bounds.height / 2)
-        }
+//        tableView.snp.makeConstraints { make in
+//            make.leading.trailing.top.equalToSuperview()
+//            make.height.equalTo(UIScreen.main.bounds.height / 2)
+//        }
     }
 }
