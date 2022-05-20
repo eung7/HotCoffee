@@ -13,7 +13,7 @@ enum NetworkError: Error {
     case urlError
 }
 
-struct Resource<T: Codable> {
+struct Resource<T: Codable> { /// T는 Codable 프로토콜을 따르는 어떠한 타입도 OK
     let url: URL
 }
 

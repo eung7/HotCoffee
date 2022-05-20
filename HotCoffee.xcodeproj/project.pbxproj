@@ -15,6 +15,7 @@
 		E5133716283775150030646E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5133715283775150030646E /* SnapKit */; };
 		E5133718283775A10030646E /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5133717283775A10030646E /* AddOrderViewController.swift */; };
 		E513371B28377ABF0030646E /* WebSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371A28377ABF0030646E /* WebSerivce.swift */; };
+		E513371D283780BC0030646E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371C283780BC0030646E /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E513370D283774420030646E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5133717283775A10030646E /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		E513371A28377ABF0030646E /* WebSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSerivce.swift; sourceTree = "<group>"; };
+		E513371C283780BC0030646E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E513371A28377ABF0030646E /* WebSerivce.swift */,
+				E513371C283780BC0030646E /* Order.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E513371D283780BC0030646E /* Order.swift in Sources */,
 				E513371B28377ABF0030646E /* WebSerivce.swift in Sources */,
 				E5133704283774400030646E /* OrdersViewController.swift in Sources */,
 				E5133700283774400030646E /* AppDelegate.swift in Sources */,
