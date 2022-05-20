@@ -14,6 +14,7 @@
 		E513370C283774420030646E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E513370A283774420030646E /* LaunchScreen.storyboard */; };
 		E5133716283775150030646E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5133715283775150030646E /* SnapKit */; };
 		E5133718283775A10030646E /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5133717283775A10030646E /* AddOrderViewController.swift */; };
+		E513371B28377ABF0030646E /* WebSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371A28377ABF0030646E /* WebSerivce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E513370B283774420030646E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E513370D283774420030646E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5133717283775A10030646E /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
+		E513371A28377ABF0030646E /* WebSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSerivce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		E51336FE283774400030646E /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				E513371928377AAE0030646E /* Services */,
 				E5133713283774CA0030646E /* Controllers */,
 				E51336FF283774400030646E /* AppDelegate.swift */,
 				E5133701283774400030646E /* SceneDelegate.swift */,
@@ -75,6 +78,14 @@
 				E5133717283775A10030646E /* AddOrderViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E513371928377AAE0030646E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E513371A28377ABF0030646E /* WebSerivce.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E513371B28377ABF0030646E /* WebSerivce.swift in Sources */,
 				E5133704283774400030646E /* OrdersViewController.swift in Sources */,
 				E5133700283774400030646E /* AppDelegate.swift in Sources */,
 				E5133702283774400030646E /* SceneDelegate.swift in Sources */,
