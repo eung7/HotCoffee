@@ -10,6 +10,8 @@ import SnapKit
 
 class AddOrderViewController: UIViewController {
     private var viewModel = AddCoffeeOrderViewModel()
+    var didSaveButton: ((Order) -> Void)?
+    var didCloseButton: (() -> Void)?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -103,6 +105,11 @@ extension AddOrderViewController {
         WebSerivce().load(resource: Order.create(vm: viewModel)) { result in
             switch result {
             case .success(let order):
+                if let order = order {
+                    DispatchQueue.main.async {
+                        self.didSaveButton?(order)
+                    }
+                }
                 print(order)
             case .failure(let error):
                 print(error.localizedDescription)

@@ -13,8 +13,10 @@ class OrdersViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(OrderTableViewCell.self,
-                           forCellReuseIdentifier: OrderTableViewCell.identifier)
+        tableView.register(
+            OrderTableViewCell.self,
+            forCellReuseIdentifier: OrderTableViewCell.identifier
+        )
         tableView.dataSource = self
         
         return tableView
@@ -35,10 +37,12 @@ class OrdersViewController: UIViewController {
     
     private func setupUI() {
         title = "Orders"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(didTapAddButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .done,
+            target: self,
+            action: #selector(didTapAddButton)
+        )
         
         view.addSubview(tableView)
         
@@ -81,8 +85,17 @@ extension OrdersViewController: UITableViewDataSource {
 /// @objc Methods
 extension OrdersViewController {
     @objc func didTapAddButton() {
-        let vc = UINavigationController(rootViewController: AddOrderViewController())
+        let addVC = AddOrderViewController()
+        let vc = UINavigationController(rootViewController: addVC)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+        
+        addVC.didSaveButton = { [weak self] order in
+            guard let self = self else { return }
+            addVC.dismiss(animated: true)
+            let orderVM = OrderViewModel(order: order)
+            self.viewModel.ordersViewModel.append(orderVM)
+            self.tableView.insertRows(at: [IndexPath.init(row: self.viewModel.ordersViewModel.count - 1, section: 0)], with: .automatic)
+        }
     }
 }
