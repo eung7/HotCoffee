@@ -18,6 +18,8 @@
 		E513371D283780BC0030646E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371C283780BC0030646E /* Order.swift */; };
 		E5133720283788FA0030646E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371F283788FA0030646E /* OrderViewModel.swift */; };
 		E5133722283796BF0030646E /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5133721283796BF0030646E /* OrderTableViewCell.swift */; };
+		E513372528379BB30030646E /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513372428379BB30030646E /* AddCoffeeOrderViewModel.swift */; };
+		E51337272837A1D50030646E /* AddOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51337262837A1D50030646E /* AddOrderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		E513371C283780BC0030646E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		E513371F283788FA0030646E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		E5133721283796BF0030646E /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		E513372428379BB30030646E /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
+		E51337262837A1D50030646E /* AddOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E513371F283788FA0030646E /* OrderViewModel.swift */,
+				E513372428379BB30030646E /* AddCoffeeOrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E5133721283796BF0030646E /* OrderTableViewCell.swift */,
+				E51337262837A1D50030646E /* AddOrderTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -193,9 +199,11 @@
 				E513371B28377ABF0030646E /* WebSerivce.swift in Sources */,
 				E5133722283796BF0030646E /* OrderTableViewCell.swift in Sources */,
 				E5133704283774400030646E /* OrdersViewController.swift in Sources */,
+				E51337272837A1D50030646E /* AddOrderTableViewCell.swift in Sources */,
 				E5133700283774400030646E /* AppDelegate.swift in Sources */,
 				E5133702283774400030646E /* SceneDelegate.swift in Sources */,
 				E5133720283788FA0030646E /* OrderViewModel.swift in Sources */,
+				E513372528379BB30030646E /* AddCoffeeOrderViewModel.swift in Sources */,
 				E5133718283775A10030646E /* AddOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

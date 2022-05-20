@@ -20,6 +20,13 @@ class OrdersViewController: UIViewController {
         return tableView
     }()
     
+    var addBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem()
+        barButtonItem.image = UIImage(systemName: "plus")
+        
+        return barButtonItem
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -28,6 +35,10 @@ class OrdersViewController: UIViewController {
     
     private func setupUI() {
         title = "Orders"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didTapAddButton))
         
         view.addSubview(tableView)
         
@@ -70,5 +81,14 @@ extension OrdersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.ordersViewModel.count
+    }
+}
+
+/// @objc Methods
+extension OrdersViewController {
+    @objc func didTapAddButton() {
+        let vc = UINavigationController(rootViewController: AddOrderViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
