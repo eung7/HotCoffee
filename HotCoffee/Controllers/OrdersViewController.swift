@@ -9,9 +9,13 @@ import UIKit
 import SnapKit
 
 class OrdersViewController: UIViewController {
+    var viewModel = OrderListViewModel()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.register(OrderTableViewCell.self,
+                           forCellReuseIdentifier: OrderTableViewCell.identifier)
+        tableView.dataSource = self
         
         return tableView
     }()
@@ -20,10 +24,11 @@ class OrdersViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         populateOrders()
-        print("dd")
     }
     
     private func setupUI() {
+        title = "Orders"
+        
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
@@ -33,13 +38,17 @@ class OrdersViewController: UIViewController {
     
     private func populateOrders() {
         guard let coffeeOrdersURL = URL(string: "https://warp-wiry-rugby.glitch.me/orders") else {
-            fatalError("URL wass incorrect"); return
+            fatalError("URL wass incorrect")
+            return
         }
         let resource = Resource<[Order]>(url: coffeeOrdersURL)
-        WebSerivce().load(resource: resource) { result in
+        
+        WebSerivce().load(resource: resource) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let orders):
-                print(orders)
+                self.viewModel.ordersViewModel = orders.map { OrderViewModel(order: $0) }
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -47,3 +56,19 @@ class OrdersViewController: UIViewController {
     }
 }
 
+extension OrdersViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = viewModel.orderViewModel(at: indexPath.row)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OrderTableViewCell.identifier,
+                                                       for: indexPath) as? OrderTableViewCell else {
+            return UITableViewCell() }
+        cell.titleLabel.text = viewModel.name
+        cell.sizeLabel.text = viewModel.size
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.ordersViewModel.count
+    }
+}

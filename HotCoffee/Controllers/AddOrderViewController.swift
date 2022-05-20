@@ -58,10 +58,5 @@ class AddOrderViewController: UIViewController {
     
     private func setupUI() {
         title = "Add New Order"
-        
-//        tableView.snp.makeConstraints { make in
-//            make.leading.trailing.top.equalToSuperview()
-//            make.height.equalTo(UIScreen.main.bounds.height / 2)
-//        }
     }
 }
