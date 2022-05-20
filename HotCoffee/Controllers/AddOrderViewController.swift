@@ -89,7 +89,16 @@ class AddOrderViewController: UIViewController {
 /// @objc Methods
 extension AddOrderViewController {
     @objc func didTapSaveButton() {
+        let name = nameTextField.text
+        let email = emailTextField.text
+        let size = coffeeSizeSegmentedControl.titleForSegment(at: coffeeSizeSegmentedControl.selectedSegmentIndex)
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("Error in Selecting Coffee!")}
         
+        viewModel.name = name
+        viewModel.email = email
+        viewModel.selectedSize = size
+        viewModel.selectedType = viewModel.types[indexPath.row]
     }
     
     @objc func didTapCloseButton() {
