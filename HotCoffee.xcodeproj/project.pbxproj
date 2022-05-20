@@ -72,6 +72,7 @@
 			children = (
 				E5133723283796C30030646E /* Cells */,
 				E513371E283788EC0030646E /* ViewModels */,
+				E51337282837A7890030646E /* Models */,
 				E513371928377AAE0030646E /* Services */,
 				E5133713283774CA0030646E /* Controllers */,
 				E51336FF283774400030646E /* AppDelegate.swift */,
@@ -96,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				E513371A28377ABF0030646E /* WebSerivce.swift */,
-				E513371C283780BC0030646E /* Order.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -117,6 +117,14 @@
 				E51337262837A1D50030646E /* AddOrderTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E51337282837A7890030646E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E513371C283780BC0030646E /* Order.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
