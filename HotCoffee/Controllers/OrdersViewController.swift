@@ -48,13 +48,7 @@ class OrdersViewController: UIViewController {
     }
     
     private func populateOrders() {
-        guard let coffeeOrdersURL = URL(string: "https://warp-wiry-rugby.glitch.me/orders") else {
-            fatalError("URL wass incorrect")
-            return
-        }
-        let resource = Resource<[Order]>(url: coffeeOrdersURL)
-        
-        WebSerivce().load(resource: resource) { [weak self] result in
+        WebSerivce().load(resource: Order.all) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let orders):

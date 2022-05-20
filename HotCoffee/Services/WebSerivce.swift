@@ -13,8 +13,21 @@ enum NetworkError: Error {
     case urlError
 }
 
+enum HttpMehotd: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 struct Resource<T: Codable> { /// T는 Codable 프로토콜을 따르는 어떠한 타입도 OK
     let url: URL
+    var httpMethod: HttpMehotd = .get
+    var body: Data?
+}
+
+extension Resource {
+    init(url: URL) {
+        self.url = url
+    }
 }
 
 class WebSerivce {
