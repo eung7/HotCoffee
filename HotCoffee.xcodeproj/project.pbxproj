@@ -16,6 +16,7 @@
 		E5133718283775A10030646E /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5133717283775A10030646E /* AddOrderViewController.swift */; };
 		E513371B28377ABF0030646E /* WebSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371A28377ABF0030646E /* WebSerivce.swift */; };
 		E513371D283780BC0030646E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371C283780BC0030646E /* Order.swift */; };
+		E5133720283788FA0030646E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E513371F283788FA0030646E /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		E5133717283775A10030646E /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		E513371A28377ABF0030646E /* WebSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSerivce.swift; sourceTree = "<group>"; };
 		E513371C283780BC0030646E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		E513371F283788FA0030646E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		E51336FE283774400030646E /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				E513371E283788EC0030646E /* ViewModels */,
 				E513371928377AAE0030646E /* Services */,
 				E5133713283774CA0030646E /* Controllers */,
 				E51336FF283774400030646E /* AppDelegate.swift */,
@@ -89,6 +92,14 @@
 				E513371C283780BC0030646E /* Order.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E513371E283788EC0030646E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E513371F283788FA0030646E /* OrderViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				E5133704283774400030646E /* OrdersViewController.swift in Sources */,
 				E5133700283774400030646E /* AppDelegate.swift in Sources */,
 				E5133702283774400030646E /* SceneDelegate.swift in Sources */,
+				E5133720283788FA0030646E /* OrderViewModel.swift in Sources */,
 				E5133718283775A10030646E /* AddOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
