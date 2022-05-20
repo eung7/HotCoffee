@@ -99,6 +99,15 @@ extension AddOrderViewController {
         viewModel.email = email
         viewModel.selectedSize = size
         viewModel.selectedType = viewModel.types[indexPath.row]
+        
+        WebSerivce().load(resource: Order.create(vm: viewModel)) { result in
+            switch result {
+            case .success(let order):
+                print(order)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     @objc func didTapCloseButton() {
