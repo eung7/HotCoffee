@@ -21,11 +21,8 @@ class AddOrderViewController: UIViewController {
         return tableView
     }()
     
-    var coffeeSizeSegmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl()
-        control.insertSegment(withTitle: "Small", at: 0, animated: false)
-        control.insertSegment(withTitle: "Medium", at: 1, animated: false)
-        control.insertSegment(withTitle: "Large", at: 2, animated: false)
+    lazy var coffeeSizeSegmentedControl: UISegmentedControl = {
+        let control = UISegmentedControl(items: viewModel.sizes)
         
         return control
     }()
@@ -113,7 +110,11 @@ extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
         return viewModel.types.count
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
 }
